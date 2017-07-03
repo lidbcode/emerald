@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>搜索</title>
+		<script src="../common/js/mui.min.js"></script>
+		<script src="../common/js/vue.min.js"></script>
+		<link href="../common/css/mui.min.css" rel="stylesheet" />
+		<link href="../common/css/category.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div id="search" >
+			<div class="search-box">
+				<form>
+					<div class="search-plane">
+						<input type="text" :placeholder='keyword' :value='keyword' name="keyword">
+					</div>
+					<div class="search-btn">
+						<button id="btn" type="button">搜 索</button>
+					</div>
+				</form>
+			</div>
+			<div class="no-result" v-if="no_result">抱歉，没有找到您搜索的商品，您还可以看看这些:</div>
+			<div class="no-result" v-else>
+				<span v-if="keyword">关键词为{{keyword}}的搜索结果:</span>
+				<span v-else>默认推荐的爆品:</span>
+			</div>
+			<div class="item-list">
+				<template id="items" v-for="item in items">
+					<ul id="category-items" class="item clearfix" :data-url='item.fields.coupon_url'>
+						<div class="item-left">
+							<image class="item-image" :src="item.fields.img_url"></image>
+						</div>
+						<div class="item-right">
+							<div class="item-name">
+								<span class="coupon">
+                        <span class="mr3">券</span> {{item.fields.coupon_value}}元
+								</span>
+								{{item.fields.ad_name}}
+							</div>
+							<div class="sale-info clearfix">
+								<div class="price-value fl">券后价&nbsp<span class="show-price"> {{item.fields.price}}</span>元</div>
+								<div class="sale-num fr">销量&nbsp{{item.fields.sales_num}}</div>
+							</div>
+							<div class="buy clearfix fr ">
+								<button class="buy-button">领券购买</button>
+							</div>
+						</div>
+					</ul>
+				</template>
+			</div>
+		</div>
+	</body>
+	<script src="../common/js/search.js"></script>
+</html>

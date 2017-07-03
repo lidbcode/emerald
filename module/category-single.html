@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>分类</title>
+		<script src="../common/js/mui.min.js"></script>
+		<script src="../common/js/vue.min.js"></script>
+		<link href="../common/css/mui.min.css" rel="stylesheet" />
+		<link href="../common/css/category.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+	</head>
+
+	<body>
+		<div id="category-single" >
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">{{cname}}专场</h1>
+		</header>
+			<div class="search-box" style="margin-top:42px">
+				<form action="/dwxk/search/" method="get">
+					<div class="search-plane">
+						<input type="text" placeholder="箱包" name="keyword">
+					</div>
+					<div class="search-btn">
+						<button type="submit">搜 索</button>
+					</div>
+				</form>
+			</div>
+			<div class="item-list" style="margin-top:7.0rem">
+				<template id="items" v-for="item in items" style="margin-top:3.6rem;">
+					<ul id="category-items" class="item clearfix" :data-url='item.fields.coupon_url'>
+						<div class="item-left">
+							<image class="item-image" :src="item.fields.img_url"></image>
+						</div>
+						<div class="item-right">
+							<div class="item-name">
+								<span class="coupon">
+                        <span class="mr3">券</span> {{item.fields.coupon_value}}元
+								</span>
+								{{item.fields.ad_name}}
+							</div>
+							<div class="sale-info clearfix">
+								<div class="price-value fl">券后价&nbsp<span class="show-price"> {{item.fields.price}}</span>元</div>
+								<div class="sale-num fr">销量&nbsp{{item.fields.sales_num}}</div>
+							</div>
+							<div class="buy clearfix fr ">
+								<button class="buy-button">领券购买</button>
+							</div>
+						</div>
+					</ul>
+				</template>
+			</div>
+		</div>
+	</body>
+	<script src="../common/js/category-single.js"></script>
+</html>

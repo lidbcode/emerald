@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title>分类搜索</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="keywords" content="楚楚客,大微信客，优惠券">
+		<meta name="describe" content="多家知名电商品牌的优质商品">
+		<script src="../common/js/mui.min.js"></script>
+		<script src="../common/js/vue.min.js"></script>
+		<link rel="stylesheet" href="../common/css/mui.min.css">
+		<link rel="stylesheet" href="../common/css/category.css">
+	</head>
+
+	<body>
+		<div id="category">
+			<div class="search-box">
+				<form>
+					<div class="search-plane">
+						<input type="text" placeholder="请输入商品的名称" name="keyword">
+					</div>
+					<div class="search-btn">
+						<button id="btn" type="button">搜 索</button>
+					</div>
+				</form>
+			</div>
+			<div class="category-box">
+				<template v-for="cate in cates">
+					<div id="category-info" class="category-item" :data-cid='cate.cid' :data-cname='cate.cname'>
+						<div class="category-icon">
+							<image :src="cate.img_url"></image>
+						</div>
+						<div class="categoey-name">{{cate.cname}}</div>
+					</div>
+				</template>
+				<div class="clear-both"></div>
+			</div>
+			<div class="item-list">
+				<template id="items" v-for="item in items">
+					<ul id = "category-items" class="item clearfix" :data-url='item.fields.coupon_url'>
+						<div class="item-left">
+							<image class="item-image" :src="item.fields.img_url"></image>
+						</div>
+						<div class="item-right">
+							<div class="item-name">
+								<span class="coupon">
+                        			<span class="mr3">券</span> {{item.fields.coupon_value}}元
+								</span>
+								{{item.fields.ad_name}}
+							</div>
+							<div class="sale-info clearfix">
+								<div class="price-value fl">券后价&nbsp<span class="show-price"> {{item.fields.price}}</span>元</div>
+								<div class="sale-num fr">销量&nbsp{{item.fields.sales_num}}</div>
+							</div>
+							<div class="buy clearfix fr ">
+								<button class="buy-button">领券购买</button>
+							</div>
+						</div>
+					</ul>
+				</template>
+		</div>
+	</body>
+	<script src="../common/js/category.js"></script>
+
+</html>
