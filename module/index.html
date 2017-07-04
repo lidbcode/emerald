@@ -4,191 +4,73 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title></title>
+		<title>首页</title>
 		<script src="../common/js/mui.min.js"></script>
 		<script src="../common/js/vue.min.js"></script>
 		<link href="../common/css/mui.min.css" rel="stylesheet" />
 		<link href="../common/css/category.css" rel="stylesheet" />
+		<link href="../common/css/index.css" rel="stylesheet" />
 	</head>
 
 	<body>
-		<div class="search-box">
-			<form>
-				<div class="search-plane">
-					<input type="text" placeholder="请输入商品的名称" name="keyword">
+		<div id="index">
+			<div class="search-box">
+				<form>
+					<div class="search-plane">
+						<input type="text" placeholder="请输入商品的名称" name="keyword">
+					</div>
+					<div class="search-btn">
+						<button id="btn" type="button">搜 索</button>
+					</div>
+				</form>
+			</div>
+			<div id="slider" class="mui-slider">
+				<div class="mui-slider-group mui-slider-loop">
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="../common/image/test-banner.png">
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../common/image/test-banner.png">
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../common/image/test-banner.png">
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../common/image/test-banner.png">
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../common/image/test-banner.png">
+						</a>
+					</div>
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="../common/image/test-banner.png">
+						</a>
+					</div>
 				</div>
-				<div class="search-btn">
-					<button id="btn" type="button">搜 索</button>
-				</div>
-			</form>
-		</div>
-		<div id="slider" class="mui-slider" style="top:3.2rem; height: 12rem;">
-			<div class="mui-slider-group mui-slider-loop">
-				<div class="mui-slider-item mui-slider-item-duplicate">
-					<a href="#">
-						<img src="../common/image/test-banner.png">
-					</a>
-				</div>
-				<div class="mui-slider-item">
-					<a href="#">
-						<img src="../common/image/test-banner.png">
-					</a>
-				</div>
-				<div class="mui-slider-item">
-					<a href="#">
-						<img src="../common/image/test-banner.png">
-					</a>
-				</div>
-				<div class="mui-slider-item">
-					<a href="#">
-						<img src="../common/image/test-banner.png">
-					</a>
-				</div>
-				<div class="mui-slider-item">
-					<a href="#">
-						<img src="../common/image/test-banner.png">
-					</a>
-				</div>
-				<div class="mui-slider-item mui-slider-item-duplicate">
-					<a href="#">
-						<img src="../common/image/test-banner.png">
-					</a>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
 				</div>
 			</div>
-			<div class="mui-slider-indicator">
-				<div class="mui-indicator mui-active"></div>
-				<div class="mui-indicator"></div>
-				<div class="mui-indicator"></div>
-				<div class="mui-indicator"></div>
-			</div>
-		</div>
-		<div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted" style="margin-top: 3.6rem;height: 6rem;background: #FFFFFF;">
-			<div class="mui-scroll" style="height: 100%;width:200%;padding-left: 0;">
-				<img src="../common/image/brand-1.png" style="height: 100%;">
-				<img src="../common/image/brand-1.png" style="height: 100%;">
-				<img src="../common/image/brand-1.png" style="height: 100%;">
-				<img src="../common/image/brand-1.png" style="height: 100%;">
-				<img src="../common/image/brand-1.png" style="height: 100%;">
-				<img src="../common/image/brand-1.png" style="height: 100%;">
-				<img src="../common/image/brand-1.png" style="height: 100%;">
-				<img src="../common/image/brand-1.png" style="height: 100%;">
-				<img src="../common/image/brand-1.png" style="height: 100%;">
-				<img src="../common/image/brand-1.png" style="height: 100%;">
-			</div>
-		</div>
-
-		<div class="item clearfix" onclick="javascript:location.href='https://share.chuchutong.com/d/nEaYNJKn'">
-			<div class="item-left">
-				<image class="item-image" src="https://image-shop.chuchutong.com/culiu.cdn/wxk.image/201703/13/b20942f21c8513224d6ca261cad18a631489411361_750_750.jpg?imageView2/2/w/480/q/75"></image>
-			</div>
-			<div class="item-right">
-				<div class="item-name">
-					<span class="coupon">
-                        <span class="mr3">券</span> 22.0元
-					</span>
-					家英10条装不沾油洗碗抹布百洁布颜色款式随机
+			<div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted" 
+				style="width: 100%; padding: 0;">
+				<div class="mui-scroll" style="height: 100%; width:200%;">
+					<template v-for="brand in brands">
+							<img id="brand-img" :src='brand.fields.brand_logo' style="height: 6rem%; width:12.5%">
+					</template>
 				</div>
-				<div class="sale-info clearfix">
-					<div class="price-value fl">券后价&nbsp<span class="show-price"> 13.0</span>元</div>
-					<div class="sale-num fr">销量&nbsp11764</div>
-				</div>
-				<div class="buy clearfix fr ">
-					<button class="buy-button">领券购买</button>
-				</div>
-			</div>
-		</div>
-		<div class="item clearfix" onclick="javascript:location.href='https://share.chuchutong.com/d/nEaYNJKn'">
-			<div class="item-left">
-				<image class="item-image" src="https://image-shop.chuchutong.com/culiu.cdn/wxk.image/201703/13/b20942f21c8513224d6ca261cad18a631489411361_750_750.jpg?imageView2/2/w/480/q/75"></image>
-			</div>
-			<div class="item-right">
-				<div class="item-name">
-					<span class="coupon">
-                        <span class="mr3">券</span> 22.0元
-					</span>
-					家英10条装不沾油洗碗抹布百洁布颜色款式随机
-				</div>
-				<div class="sale-info clearfix">
-					<div class="price-value fl">券后价&nbsp<span class="show-price"> 13.0</span>元</div>
-					<div class="sale-num fr">销量&nbsp11764</div>
-				</div>
-				<div class="buy clearfix fr ">
-					<button class="buy-button">领券购买</button>
-				</div>
-			</div>
-		</div>
-		<div class="item clearfix" onclick="javascript:location.href='https://share.chuchutong.com/d/nEaYNJKn'">
-			<div class="item-left">
-				<image class="item-image" src="https://image-shop.chuchutong.com/culiu.cdn/wxk.image/201703/13/b20942f21c8513224d6ca261cad18a631489411361_750_750.jpg?imageView2/2/w/480/q/75"></image>
-			</div>
-			<div class="item-right">
-				<div class="item-name">
-					<span class="coupon">
-                        <span class="mr3">券</span> 22.0元
-					</span>
-					家英10条装不沾油洗碗抹布百洁布颜色款式随机
-				</div>
-				<div class="sale-info clearfix">
-					<div class="price-value fl">券后价&nbsp<span class="show-price"> 13.0</span>元</div>
-					<div class="sale-num fr">销量&nbsp11764</div>
-				</div>
-				<div class="buy clearfix fr ">
-					<button class="buy-button">领券购买</button>
-				</div>
-			</div>
-		</div>
-		<div class="item clearfix" onclick="javascript:location.href='https://share.chuchutong.com/d/nEaYNJKn'">
-			<div class="item-left">
-				<image class="item-image" src="https://image-shop.chuchutong.com/culiu.cdn/wxk.image/201703/13/b20942f21c8513224d6ca261cad18a631489411361_750_750.jpg?imageView2/2/w/480/q/75"></image>
-			</div>
-			<div class="item-right">
-				<div class="item-name">
-					<span class="coupon">
-                        <span class="mr3">券</span> 22.0元
-					</span>
-					家英10条装不沾油洗碗抹布百洁布颜色款式随机
-				</div>
-				<div class="sale-info clearfix">
-					<div class="price-value fl">券后价&nbsp<span class="show-price"> 13.0</span>元</div>
-					<div class="sale-num fr">销量&nbsp11764</div>
-				</div>
-				<div class="buy clearfix fr ">
-					<button class="buy-button">领券购买</button>
-				</div>
-			</div>
-		</div>
-		<div class="item clearfix" onclick="javascript:location.href='https://share.chuchutong.com/d/nEaYNJKn'">
-			<div class="item-left">
-				<image class="item-image" src="https://image-shop.chuchutong.com/culiu.cdn/wxk.image/201703/13/b20942f21c8513224d6ca261cad18a631489411361_750_750.jpg?imageView2/2/w/480/q/75"></image>
-			</div>
-			<div class="item-right">
-				<div class="item-name">
-					<span class="coupon">
-                        <span class="mr3">券</span> 22.0元
-					</span>
-					家英10条装不沾油洗碗抹布百洁布颜色款式随机
-				</div>
-				<div class="sale-info clearfix">
-					<div class="price-value fl">券后价&nbsp<span class="show-price"> 13.0</span>元</div>
-					<div class="sale-num fr">销量&nbsp11764</div>
-				</div>
-				<div class="buy clearfix fr ">
-					<button class="buy-button">领券购买</button>
-				</div>
-			</div>
-		</div>
-		<div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted" style="height: 6rem;background: #FFFFFF;">
-			<div class="mui-scroll" style="height: 100%;width:200%;padding-left: 0;">
-				<img src="../common/image/brand-1.png" style="height: 100%;">
-				<img src="../common/image/brand-1.png" style="height: 100%;">
-				<img src="../common/image/brand-1.png" style="height: 100%;">
-				<img src="../common/image/brand-1.png" style="height: 100%;">
-				<img src="../common/image/brand-1.png" style="height: 100%;">
-				<img src="../common/image/brand-1.png" style="height: 100%;">
-				<img src="../common/image/brand-1.png" style="height: 100%;">
-				<img src="../common/image/brand-1.png" style="height: 100%;">
-				<img src="../common/image/brand-1.png" style="height: 100%;">
-				<img src="../common/image/brand-1.png" style="height: 100%;">
 			</div>
 		</div>
 	</body>
