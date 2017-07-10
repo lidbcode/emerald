@@ -4,15 +4,9 @@
 }
 
 .mui-scroll-wrapper {
-	margin-top: 3.6rem;
 	height: 6rem;
 	background: #FFFFFF;
 }
-
-/*.mui_scroll {
-	border: 2px solid blue;
+.active {
+	margin-top: 3.6rem;
 }
-
-#brand-img {
-	height: 100%;
-}*/

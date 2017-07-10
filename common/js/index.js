@@ -9,18 +9,16 @@ var vm = new Vue({
 	}
 });
 
-//mui.init({
-//	pullRefresh: {
-//		container: '#index',
-//		up: {
-//			auto: false,
-//			contentrefresh: '正在加载...',
-//			callback: getIndexData
-//		}
-//	}
-//});
-
-mui.init()
+mui.init({
+	pullRefresh: {
+		container: '#index',
+		up: {
+			auto: false,
+			contentrefresh: '正在加载...',
+			callback: getBrandItems
+		}
+	}
+});
 
 mui.plusReady(function(){
 	mui('.mui-scroll-wrapper').scroll({
@@ -28,7 +26,8 @@ mui.plusReady(function(){
 		 startX: 0,
 		 bounce: false,
 	});
-	getBrandInfo()
+	getBrandInfo();
+	getBrandItems();
 })
 
 function getBrandInfo() {
@@ -48,11 +47,11 @@ function getBrandInfo() {
 	}, 1500);
 };
 
-function getIndexData() {
+function getBrandItems() {
 	setTimeout(function() {
 		var _this = this
-		mui('#index').pullRefresh().endPullup((_this.vm.page > 20));
-		mui.ajax(apiUrl + 'get_brand_info/', {
+		if(_this.vm.page != 1) mui('#index').pullRefresh().endPullup((_this.vm.page > 20)); 
+		mui.ajax(apiUrl + 'get_brand_items/0/' + _this.vm.page, {
 			dataType: 'json',
 			type: 'get',
 			timeout: 10000,
@@ -60,10 +59,30 @@ function getIndexData() {
 				'Content-Type': 'application/json'
 			},
 			success: function(data) {
-				alert(data)
-				_this.vm.brands = this.vm.brands.concat(data)
-				_this.vm.page = this.vm.page + 1;
+				_this.vm.items = this.vm.items.concat(data)
+				_this.vm.page = this.vm.page + 1
 			}
 		})
 	}, 1500);
 };
+
+
+//function getIndexData() {
+//	setTimeout(function() {
+//		var _this = this
+//		mui('#index').pullRefresh().endPullup((_this.vm.page > 20));
+//		mui.ajax(apiUrl + 'get_brand_items/0/' + , {
+//			dataType: 'json',
+//			type: 'get',
+//			timeout: 10000,
+//			headers: {
+//				'Content-Type': 'application/json'
+//			},
+//			success: function(data) {
+//				alert(data)
+//				_this.vm. = this.vm.items.concat(data)
+//				_this.vm.page = this.vm.page + 1;
+//			}
+//		})
+//	}, 1500);
+//};
