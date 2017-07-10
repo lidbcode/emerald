@@ -7,6 +7,7 @@ var category = new Vue({
 		items: [],
 		page: 1,
 		is_end: false
+		
 	}
 });
 
@@ -43,7 +44,7 @@ function getCategoryItems() {
 	setTimeout(function() {
 		var _this = this
 		mui('#category').pullRefresh().endPullup((_this.category.page > 10));
-		mui.ajax(apiUrl + 'get_category_items/' + _this.category.page, {
+		mui.ajax(apiUrl + 'get_category_items/-0/' + _this.category.page, {
 			dataType: 'json',
 			type: 'get',
 			timeout: 10000,
