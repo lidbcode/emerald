@@ -66,11 +66,14 @@
 				</div>-->
 			</div>
 			<template v-for="n in 3">
-				<div class="mui-scroll-wrapper mui-slider-indicatorcode mui-segmented-control mui-segmented-control-inverted" v-bind:class="{ active: n == 1 }" style="border: 2px solid red; height: 6rem;">
-					<div class="mui-scroll" style="height:100%;width: 200%;border: 2px solid #2AC845;">
+				<div class="mui-scroll-wrapper mui-slider-indicatorcode mui-segmented-control mui-segmented-control-inverted" v-bind:class="{ active: n == 1 }">
+					<div class="mui-scroll" style="height:100%;width: 200%;">
 						<template v-for="(value,index) in brands">
-							<div v-if='index < n * 10 && index >= (n-1)*10' style="display:inline;height:6rem;border: 2px solid #6641E2;">
-								<img id="brand-img" :src='value.fields.brand_logo' style="display: inline; height: 6rem; width:10%;">
+							<div v-if='index < n * 10 && index >= (n-1)*10' 
+								style="display:inline;">
+								<img id="brand-img" :src='value.fields.brand_logo' :data-cid='value.fields.brand_id'
+									style="width:10%;padding:1%;">
+								</img>
 							</div>
 						</template>
 					</div>

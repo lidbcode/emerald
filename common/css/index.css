@@ -5,8 +5,9 @@
 
 .mui-scroll-wrapper {
 	height: 6rem;
+	margin-bottom: 0.2rem;
 	background: #FFFFFF;
 }
 .active {
-	margin-top: 3.6rem;
+	margin-top: 3.5rem;
 }
