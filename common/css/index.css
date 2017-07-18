@@ -1,3 +1,37 @@
+.search-box-new{
+	position: fixed;
+	top:0;
+	left: 0;
+	z-index:999;
+	width : 100%;
+	height: 3.2rem;
+	background-color: #FFFFFF;
+}
+.active-input{
+	height: 2.2rem;
+	width: 96%;
+	margin-left: 2%;
+	margin-top: 0.5rem;
+    border-radius: 3.0rem;
+    background: #F3F3F3;
+   /* border: 2px solid blue;*/
+}
+.active-input .mui-icon-search{
+	height: 2.2rem;
+	float: left;
+	padding-left:0.6rem;
+	/*border: 2px solid red;*/
+}
+.active-input input {
+	width:80%;
+	height: 2.2rem;
+	line-height: 2.4rem;
+	float: left;
+	padding: 0;
+	padding-left: 0.3rem;
+	background-color: #F3F3F3;
+	border:none;
+}
 .mui-slider {
 	top:3.2rem; 
 	height: 12rem;"
