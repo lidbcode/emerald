@@ -105,14 +105,22 @@ mui('.item-list').on('tap', '#category-items', function(e) {
 	newWv.show();
 });
 
-mui('.search-btn').on('tap','#btn',function(e){
-	var keyword = document.querySelector('input[name="keyword"]').value
-	var newWv = plus.webview.create('search.html','serach', {
-		bottom:'0px',
-		top:'0px'
-	},{
-		keyword:keyword
+mui('.search-btn').on('tap','#btn',search());
+
+function enterSearch(e) {
+	if(e.keyCode == 13) {
+		search()
+	}
+}
+
+function search() {
+	var init_keyword = document.querySelector('input[name="keyword"]').value;
+	var keyword = init_keyword ? init_keyword : this.vm.keyword
+	var newWv = plus.webview.create('search.html', 'serach', {
+		bottom: '0px',
+		top: '0px'
+	}, {
+		keyword: keyword
 	})
 	newWv.show();
-	
-});
+}

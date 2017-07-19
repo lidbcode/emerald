@@ -16,7 +16,7 @@
 			<div class="search-box">
 				<div class="active-input">
 					<img src="../common/image/search.png"/>
-					<input type="text" placeholder="搜索宝贝" name="keyword">	
+					<input type="text" :value='keyword' name="keyword" onkeyup="enterSearch(event)">	
 				</div>
 			</div>
 			<div class="no-result" v-if="no_result">抱歉，没有找到您搜索的商品，您还可以看看这些:</div>

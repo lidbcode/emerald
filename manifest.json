@@ -308,7 +308,8 @@
 					"common/css/category.css",
 					"common/js/vue.min.js",
 					"common/js/search.js",
-					"module/search.html"
+					"module/search.html",
+					"common/image/search.png"
 				],
 				"refer": [
 					"module/detail.html"

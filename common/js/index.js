@@ -87,3 +87,16 @@ mui('.active-input').on('tap','#img-btn',function(e){
 	})
 	newWv.show();
 });
+
+function enterSearch(e) {
+	if(e.keyCode == 13) {
+		var keyword = document.querySelector('input[name="keyword"]').value;
+		var newWv = plus.webview.create('search.html', 'serach', {
+			bottom: '0px',
+			top: '0px'
+		}, {
+			keyword: keyword
+		})
+		newWv.show();
+	}
+}
