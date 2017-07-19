@@ -268,7 +268,8 @@
 				],
 				"refer": [
 					"module/detail.html",
-					"module/search.html"
+					"module/search.html",
+					"module/brand-single.html"
 				],
 				"priority": 0
 			},
@@ -313,6 +314,21 @@
 				],
 				"refer": [
 					"module/detail.html"
+				],
+				"priority": 0
+			},
+			"module/brand-single.html": {
+				"resources": [
+					"common/js/brand-single.js",
+					"common/css/mui.min.css",
+					"common/js/mui.min.js",
+					"common/css/category.css",
+					"common/js/vue.min.js",
+					"common/image/search.png",
+					"common/fonts/mui.ttf"
+				],
+				"refer": [
+					"module/search.html"
 				],
 				"priority": 0
 			}

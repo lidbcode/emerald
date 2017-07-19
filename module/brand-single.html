@@ -4,28 +4,26 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>搜索</title>
+		<title>品牌</title>
 		<script src="../common/js/mui.min.js"></script>
 		<script src="../common/js/vue.min.js"></script>
 		<link href="../common/css/mui.min.css" rel="stylesheet" />
 		<link href="../common/css/category.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
 	</head>
 
 	<body>
-		<div id="search" >
+		<div id="category-single" >
 			<div class="search-box">
 				<div class="active-input">
-					<img id="img-btn" src="../common/image/search.png"/>
-					<input type="text" :value='keyword' name="keyword" onkeyup="enterSearch(event)">	
+					<img src="../common/image/search.png"/>
+					<input type="text" :value='brand_name' name="keyword" onkeyup="enterSearch(event)">	
 				</div>
 			</div>
-			<div class="no-result" v-if="no_result">抱歉，没有找到您搜索的商品，您还可以看看这些:</div>
-			<div class="no-result" v-else>
-				<span v-if="keyword">关键词为{{keyword}}的搜索结果:</span>
-				<span v-else>默认推荐的爆品:</span>
-			</div>
-			<div class="item-list">
-				<template id="items" v-for="item in items">
+			<div class="item-list" style="margin-top:3.3rem">
+				<template id="items" v-for="item in items" style="margin-top:3.6rem;">
 					<ul id="category-items" class="item clearfix" :data-url='item.fields.coupon_url'>
 						<div class="item-left">
 							<image class="item-image" :src="item.fields.img_url"></image>
@@ -50,5 +48,5 @@
 			</div>
 		</div>
 	</body>
-	<script src="../common/js/search.js"></script>
+	<script src="../common/js/brand-single.js"></script>
 </html>
