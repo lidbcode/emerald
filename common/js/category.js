@@ -23,6 +23,7 @@ mui.init({
 });
 
 mui.plusReady(function() {
+	plus.webview.currentWebview().setStyle({scrollIndicator:'none'});
 	getCategorInfo();
 });
 

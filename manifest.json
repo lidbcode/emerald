@@ -201,7 +201,11 @@
 					"common/js/mui.min.js",
 					"common/fonts/mui.ttf",
 					"module/category.html",
-					"module/index.html"
+					"module/index.html",
+					"common/image/hot.png",
+					"common/fonts/iconfont.ttf",
+					"common/css/iconfont.css",
+					"common/css/main.css"
 				],
 				"refer": [
 					"module/packet.html"
@@ -239,7 +243,8 @@
 					"common/fonts/mui.ttf",
 					"module/index.html",
 					"module/detail.html",
-					"module/category.html"
+					"module/category.html",
+					"common/image/search.png"
 				],
 				"refer": [
 					"module/category-single.html",
@@ -258,9 +263,13 @@
 					"common/js/index.js",
 					"common/image/test-banner.png",
 					"common/css/category.css",
-					"common/image/brand-1.png"
+					"common/image/brand-1.png",
+					"common/image/search.png"
 				],
-				"refer": [],
+				"refer": [
+					"module/detail.html",
+					"module/search.html"
+				],
 				"priority": 0
 			},
 			"module/detail.html": {
@@ -282,7 +291,8 @@
 					"common/js/mui.min.js",
 					"common/css/category.css",
 					"common/js/vue.min.js",
-					"common/image/test-banner.png"
+					"common/image/test-banner.png",
+					"common/image/search.png"
 				],
 				"refer": [
 					"module/detail.html"

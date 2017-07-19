@@ -23,57 +23,47 @@ body{margin:0px}
 .fr{float: right;}
 
 /*搜索框*/
-.search-box {
-  position: fixed;
-  top:-2px;
-  left:0px;
-  width: 100%;
-  z-index:999;
-  height:3.2rem;
-  margin:0.2rem auto;
-  background: #fff;
-  border: 0.2rem solid #ff4200;
+.search-box{
+	position: fixed;
+	top: 0rem;
+	left: 0;
+	z-index:999;
+	width : 100%;
+	height: 3.2rem;
+	margin:0 auto;
+	background-color: #FFFFFF;
 }
-
-.search-plane {
-  float:left;
-  width: 65%;
-  height: 2.8rem;
-  line-height:2.8rem;
-  border : 0;A
-  /*border: 2px solid #2AC845;*/
+.active-input{
+	height: 2.2rem;
+	width: 96%;
+	margin-left: 2%;
+	margin-top: 0.5rem;
+    border-radius: 3.0rem;
+    background: #F3F3F3;
 }
-.search-plane input {
-  outline:none;
-  height: 2.8rem;
-  line-height: 2.8rem;
-  border: 0;
-  padding-left:0.2rem;
-  font-size: 1.0rem;
+.active-input img {
+	height: 2.2rem;
+	float: left;
+	padding-left:0.4rem;
 }
-.search-btn {
-  float:right;
-  width: 20%;
-  height: 2.4rem;
-  border: 0;A
-}
-.search-btn button {
-  border-radius: 0;
-  width:100%;
-  outline:none;
-  border:0;
-  font-size:1.4rem;
-  color: #fff;
-  background: #FF4200;
-  cursor: pointer;
+.active-input input {
+	width:80%;
+	height: 2.2rem;
+	line-height: 2.4rem;
+	float: left;
+	padding: 0;
+	padding-left: 0.3rem;
+	background-color: #F3F3F3;
+	border:none;
 }
 
 /*分类按钮*/
 .category-box{
   width:100%;
-  padding-top:3.4rem;
+  margin-top:3.2rem;
   background-color: #FFFFFF ;
   border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
 
 }
 .category-item{

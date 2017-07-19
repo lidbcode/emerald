@@ -16,14 +16,10 @@
 	<body>
 		<div id="category">
 			<div class="search-box">
-				<form>
-					<div class="search-plane">
-						<input type="text" placeholder="请输入商品的名称" name="keyword">
-					</div>
-					<div class="search-btn">
-						<button id="btn" type="button">搜 索</button>
-					</div>
-				</form>
+				<div class="active-input">
+					<img src="../common/image/search.png"/>
+					<input type="text" placeholder="搜索宝贝" name="keyword">	
+				</div>
 			</div>
 			<div class="category-box">
 				<template v-for="cate in cates">

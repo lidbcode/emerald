@@ -16,21 +16,13 @@
 
 	<body>
 		<div id="category-single" >
-		<header class="mui-bar mui-bar-nav">
-		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-		    <h1 class="mui-title">{{cname}}专场</h1>
-		</header>
-			<div class="search-box" style="margin-top:42px">
-				<form action="/dwxk/search/" method="get">
-					<div class="search-plane">
-						<input type="text" placeholder="箱包" name="keyword">
-					</div>
-					<div class="search-btn">
-						<button type="submit">搜 索</button>
-					</div>
-				</form>
+			<div class="search-box">
+				<div class="active-input">
+					<img src="../common/image/search.png"/>
+					<input type="text" :placeholder='cname' name="keyword">	
+				</div>
 			</div>
-			<div class="item-list" style="margin-top:7.0rem">
+			<div class="item-list" style="margin-top:3.3rem">
 				<template id="items" v-for="item in items" style="margin-top:3.6rem;">
 					<ul id="category-items" class="item clearfix" :data-url='item.fields.coupon_url'>
 						<div class="item-left">

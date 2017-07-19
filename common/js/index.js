@@ -21,6 +21,7 @@ mui.init({
 });
 
 mui.plusReady(function(){
+	plus.webview.currentWebview().setStyle({scrollIndicator:'none'});
 	mui('.mui-scroll-wrapper').scroll({
 		 scrollX: false,
 		 startX: 0,
@@ -66,23 +67,23 @@ function getBrandItems() {
 	}, 1500);
 };
 
+mui('.item-list').on('tap', '#category-items', function(e) {
+	var newWv = plus.webview.create('detail.html', 'detail', {
+		bottom: '0px',
+		top: '0px'
+	}, {
+		url: this.dataset.url
+	})
+	newWv.show();
+});
 
-//function getIndexData() {
-//	setTimeout(function() {
-//		var _this = this
-//		mui('#index').pullRefresh().endPullup((_this.vm.page > 20));
-//		mui.ajax(apiUrl + 'get_brand_items/0/' + , {
-//			dataType: 'json',
-//			type: 'get',
-//			timeout: 10000,
-//			headers: {
-//				'Content-Type': 'application/json'
-//			},
-//			success: function(data) {
-//				alert(data)
-//				_this.vm. = this.vm.items.concat(data)
-//				_this.vm.page = this.vm.page + 1;
-//			}
-//		})
-//	}, 1500);
-//};
+mui('.active-input').on('tap','#img-btn',function(e){
+	var keyword = document.querySelector('input[name="keyword"]').value;
+	var newWv = plus.webview.create('search.html','serach',{
+		bottom:'0px',
+		top:'0px'
+	},{
+		keyword:keyword
+	})
+	newWv.show();
+});

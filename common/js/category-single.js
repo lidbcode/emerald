@@ -22,6 +22,7 @@ mui.init({
 });
 
 mui.plusReady(function() {
+	plus.webview.currentWebview().setStyle({scrollIndicator:'none'});
 	var self = plus.webview.currentWebview();
 	this.vm.cid = self.cid;
 	this.vm.cname = self.cname;
@@ -31,7 +32,7 @@ function getCategorySingle() {
 	setTimeout(function() {
 		var _this = this
 		mui('#category-single').pullRefresh().endPullup((_this.vm.page > 10));
-		mui.ajax(apiUrl + 'get_category_single/' + _this.vm.cid + '/' + _this.vm.page, {
+		mui.ajax(apiUrl + 'get_category_items/' + _this.vm.cid + '/' + _this.vm.page, {
 			dataType: 'json',
 			type: 'get',
 			timeout: 10000,

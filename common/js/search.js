@@ -23,6 +23,7 @@ mui.init({
 });
 
 mui.plusReady(function() {
+	plus.webview.currentWebview().setStyle({scrollIndicator:'none'});
 	var self = plus.webview.currentWebview()
 	this.vm.keyword = self.keyword
 	initSearchItems();
