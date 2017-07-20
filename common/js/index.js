@@ -39,6 +39,8 @@ mui.plusReady(function(){
 	getBannerInfo();
 	getBrandInfo();
 	getBrandItems();
+	getBrandItems();
+	getBrandItems();
 })
 
 function getBannerInfo() {
@@ -81,7 +83,7 @@ function getBrandInfo() {
 function getBrandItems() {
 	setTimeout(function() {
 		var _this = this
-		if(_this.vm.page != 1) mui('#index').pullRefresh().endPullup((_this.vm.page > 20)); 
+		if(_this.vm.page > 3) mui('#index').pullRefresh().endPullup((_this.vm.page > 20)); 
 		mui.ajax(apiUrl + 'get_brand_items/0/' + _this.vm.page, {
 			dataType: 'json',
 			type: 'get',

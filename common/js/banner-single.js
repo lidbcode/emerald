@@ -4,7 +4,7 @@ var vm = new Vue({
 	el: '#category-single',
 	data: {
 		items: [],
-		keyword: "1",
+		keyword: "",
 		img_url: "",
 		page: 1,
 	}

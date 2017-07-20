@@ -15,7 +15,7 @@ mui.plusReady(function() {
 			id: 'packet'
 		},
 		{
-			url: './personal.html',
+			url: 'https://m.chuchutong.com/js/order/vueorder/html/orderindex.html',
 			id: 'personal'
 		}
 	];
