@@ -13,6 +13,10 @@ mui.plusReady(function() {
 		{
 			url: './packet.html',
 			id: 'packet'
+		},
+		{
+			url: './personal.html',
+			id: 'personal'
 		}
 	];
 	var pageSize = pageList.length

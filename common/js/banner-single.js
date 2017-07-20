@@ -4,8 +4,8 @@ var vm = new Vue({
 	el: '#category-single',
 	data: {
 		items: [],
-		cid: "-1",
-		cname: "女装",
+		keyword: "1",
+		img_url: "",
 		page: 1,
 	}
 });
@@ -16,7 +16,7 @@ mui.init({
 		up: {
 			auto: true,
 			contentrefresh: '正在加载...',
-			callback: getCategorySingle
+			callback: getBrandSingle
 		}
 	}
 });
@@ -24,15 +24,15 @@ mui.init({
 mui.plusReady(function() {
 	plus.webview.currentWebview().setStyle({scrollIndicator:'none'});
 	var self = plus.webview.currentWebview();
-	this.vm.cid = self.cid;
-	this.vm.cname = self.cname;
+	this.vm.keyword = self.keyword;
+	this.vm.img_url = self.img_url;
 });
 
-function getCategorySingle() {
+function getBrandSingle() {
 	setTimeout(function() {
 		var _this = this
 		mui('#category-single').pullRefresh().endPullup((_this.vm.page > 10));
-		mui.ajax(apiUrl + 'get_category_items/' + _this.vm.cid + '/' + _this.vm.page, {
+		mui.ajax(apiUrl + 'get_search_items/' + _this.vm.keyword + '/' + _this.vm.page, {
 			dataType: 'json',
 			type: 'get',
 			timeout: 10000,

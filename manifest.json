@@ -208,7 +208,8 @@
 					"common/css/main.css"
 				],
 				"refer": [
-					"module/packet.html"
+					"module/packet.html",
+					"module/personal.html"
 				],
 				"priority": 0
 			},
@@ -269,7 +270,8 @@
 				"refer": [
 					"module/detail.html",
 					"module/search.html",
-					"module/brand-single.html"
+					"module/brand-single.html",
+					"module/banner-single.html"
 				],
 				"priority": 0
 			},
@@ -296,7 +298,8 @@
 					"common/image/search.png"
 				],
 				"refer": [
-					"module/detail.html"
+					"module/detail.html",
+					"module/search.html"
 				],
 				"priority": 0
 			},
@@ -328,8 +331,35 @@
 					"common/fonts/mui.ttf"
 				],
 				"refer": [
-					"module/search.html"
+					"module/search.html",
+					"module/detail.html"
 				],
+				"priority": 0
+			},
+			"module/banner-single.html": {
+				"resources": [
+					"common/fonts/mui.ttf",
+					"common/js/banner-single.js",
+					"common/css/mui.min.css",
+					"common/js/mui.min.js",
+					"common/css/category.css",
+					"common/js/vue.min.js",
+					"common/image/search.png"
+				],
+				"refer": [
+					"module/search.html",
+					"module/detail.html"
+				],
+				"priority": 0
+			},
+			"module/personal.html": {
+				"resources": [
+					"common/fonts/mui.ttf",
+					"common/css/mui.min.css",
+					"common/js/mui.min.js",
+					"common/js/vue.min.js"
+				],
+				"refer": [],
 				"priority": 0
 			}
 		},

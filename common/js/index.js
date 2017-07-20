@@ -3,6 +3,9 @@ var apiUrl = "http://47.94.159.88:26666/dwxk/api/"
 var vm = new Vue({
 	el: '#index',
 	data: {
+		banners:[],
+		start_banner_url:"",
+		end_banner_url:"",
 		brands: [],
 		items: [],
 		page: 1,
@@ -23,13 +26,40 @@ mui.init({
 mui.plusReady(function(){
 	plus.webview.currentWebview().setStyle({scrollIndicator:'none'});
 	mui('.mui-scroll-wrapper').scroll({
-		 scrollX: false,
-		 startX: 0,
-		 bounce: false,
+		scrollX: false,
+		startX: 0,
+		bounce: false,
 	});
+	mui('.banner-slider').slider({
+		interval:3000
+	});
+	mui('.brand-slider').slider({
+		interval:2000	
+	});
+	getBannerInfo();
 	getBrandInfo();
 	getBrandItems();
 })
+
+function getBannerInfo() {
+	setTimeout(function() {
+		var _this = this
+		mui.ajax(apiUrl + 'get_banner_info/', {
+			dataType: 'json',
+			type: 'get',
+			timeout: 10000,
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			success: function(data) {
+				_this.vm.banners = this.vm.banners.concat(data)
+				size = data.length
+				_this.vm.start_banner_url = data[0].fields.img_url
+				_this.vm.end_banner_url = data[size-1].fields.img_url
+			}
+		})
+	}, 1500);
+};
 
 function getBrandInfo() {
 	setTimeout(function() {
@@ -66,6 +96,28 @@ function getBrandItems() {
 		})
 	}, 1500);
 };
+
+mui('.mui-slider-group').on('tap', '#banner', function(e) {
+	var newWv = plus.webview.create('banner-single.html', 'banner-single', {
+		bottom: '0px',
+		top: '0px'
+	}, {
+		keyword: this.dataset.keyword,
+		img_url: this.dataset.img_url,
+	})
+	newWv.show();
+});
+
+mui('.mui-slider-item').on('tap', '#brand', function(e) {
+	var newWv = plus.webview.create('brand-single.html', 'brand-single', {
+		bottom: '0px',
+		top: '0px'
+	}, {
+		brand_id: this.dataset.brand_id,
+		brand_name: this.dataset.brand_name,
+	})
+	newWv.show();
+});
 
 mui('.mui-scroll').on('tap', '#brand', function(e) {
 	var newWv = plus.webview.create('brand-single.html', 'brand-single', {

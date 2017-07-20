@@ -1,13 +1,10 @@
 .mui-slider {
 	top:3.2rem; 
 	height: 12rem;
+	background-color: #FFFFFF;
+	margin-top: 0.2rem;
 }
 
-.mui-scroll-wrapper {
-	height: 6rem;
-	margin-bottom: 0.2rem;
-	background: #FFFFFF;
-}
 .active {
 	margin-top: 3.4rem;
 }

@@ -18,8 +18,8 @@
 		<div id="category-single" >
 			<div class="search-box">
 				<div class="active-input">
-					<img src="../common/image/search.png"/>
-					<input type="text" :placeholder='cname' name="keyword">	
+					<img id="img-btn" src="../common/image/search.png"/>
+					<input type="text" :value="cname" name="keyword" onkeyup="enterSearch(event)">	
 				</div>
 			</div>
 			<div class="item-list" style="margin-top:3.3rem">
