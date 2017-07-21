@@ -218,9 +218,15 @@
 					"common/js/packet.js",
 					"common/css/mui.min.css",
 					"common/js/mui.min.js",
-					"common/js/vue.min.js"
+					"common/js/vue.min.js",
+					"common/image/red.png",
+					"common/fonts/mui.ttf",
+					"common/css/category.css",
+					"common/image/c-1.png"
 				],
-				"refer": [],
+				"refer": [
+					"module/detail.html"
+				],
 				"priority": 0
 			},
 			"module/category.html": {

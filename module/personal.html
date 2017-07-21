@@ -16,10 +16,10 @@
 			<h1 class="mui-title">我的订单</h1>
 		</header>
 		<script>
-			mui();
+			mui.init();
 			mui.plusReady(function() {
 				var self = plus.webview.currentWebview();
-				var url = "https://m.chuchutong.com/js/order/vueorder/html/orderindex.html";
+				var url = "https://m.chuchutong.com/js/order/vueorder/html/orderindex.html"
 				var newWv = plus.webview.create(url, 'order', {
 					bottom: '50px',
 					top: '44px'
@@ -28,7 +28,7 @@
 			})
 			mui('.mui-bar').on('tap', '#back', function(e) {
 				plus.webview.getWebviewById('order').close();
-				var url = "https://m.chuchutong.com/js/order/vueorder/html/orderindex.html";
+				var url = "https://m.chuchutong.com/js/order/vueorder/html/orderindex.html"
 				var newWv = plus.webview.create(url, 'order', {
 					bottom: '50px',
 					top: '44px'

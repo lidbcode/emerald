@@ -17,9 +17,12 @@
 	<body>
 		<div id="category-single" >
 			<div class="search-box">
-				<div class="active-input">
-					<img src="../common/image/search.png"/>
-					<input type="text" :value='brand_name' name="keyword" onkeyup="enterSearch(event)">	
+				<div style="margin-top: 0.5rem; float:left;height:2.2rem">
+					<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				</div>	
+				<div class="active-input" style="width: 90%; margin-left: 7%;">
+					<img id="img-btn" src="../common/image/search.png"/>
+					<input type="text" :value="brand_name" name="keyword" onkeyup="enterSearch(event)">	
 				</div>
 			</div>
 			<div class="item-list" style="margin-top:3.3rem">

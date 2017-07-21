@@ -14,9 +14,12 @@
 	<body>
 		<div id="search" >
 			<div class="search-box">
-				<div class="active-input">
+				<div style="margin-top: 0.5rem; float:left;height:2.2rem">
+					<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				</div>	
+				<div class="active-input" style="width: 90%; margin-left: 7%;">
 					<img id="img-btn" src="../common/image/search.png"/>
-					<input type="text" :value='keyword' name="keyword" onkeyup="enterSearch(event)">	
+					<input type="text" :value="keyword" name="keyword" onkeyup="enterSearch(event)">	
 				</div>
 			</div>
 			<div class="no-result" v-if="no_result">抱歉，没有找到您搜索的商品，您还可以看看这些:</div>

@@ -1,15 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <title>每日红包</title>
-    <script src="../common/js/mui.min.js"></script>
-    <script src="../common/js/vue.min.js"></script>
-    <link href="../common/css/mui.min.css" rel="stylesheet"/>
-</head>
-<body>
-	packet packet packet 
-	<script src="../common/js/packet.js"></script>
-</body>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>每日红包</title>
+		<script src="../common/js/mui.min.js"></script>
+		<script src="../common/js/vue.min.js"></script>
+		<link href="../common/css/mui.min.css" rel="stylesheet" />
+		<link href="../common/css/category.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div id="packet">
+			<div style="height:24rem; margin-bottom: 0.2rem;">
+				<img src="../common/image/red.png" style="height:100%;width: 100%;">
+			</div>
+			<div class="item-list">
+				<template id="items" v-for="item in items">
+					<ul id="category-items" class="item clearfix" :data-url='item.fields.coupon_url'>
+						<div class="item-left">
+							<image class="item-image" :src="item.fields.img_url"></image>
+						</div>
+						<div class="item-right">
+							<div class="item-name">
+								<span class="coupon">
+                        <span class="mr3">券</span> {{item.fields.coupon_value}}元
+								</span>
+								{{item.fields.ad_name}}
+							</div>
+							<div class="sale-info clearfix">
+								<div class="price-value fl">券后价&nbsp<span class="show-price"> {{item.fields.price}}</span>元</div>
+								<div class="sale-num fr">销量&nbsp{{item.fields.sales_num}}</div>
+							</div>
+							<div class="buy clearfix fr ">
+								<button class="buy-button">领券购买</button>
+							</div>
+						</div>
+					</ul>
+				</template>
+			</div>
+		</div>
+		<script src="../common/js/packet.js"></script>
+	</body>
+
 </html>
