@@ -9,10 +9,6 @@
     <link href="../common/css/mui.min.css" rel="stylesheet"/>
 </head>
 <body>
-	<header class="mui-bar mui-bar-nav">
-	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-	    <h1 class="mui-title">领券购买</h1>
-	</header>
 	<script>
 		mui();
 		mui.plusReady(function(){
@@ -20,7 +16,7 @@
 			var url = self.url;
 			var newWv = plus.webview.create(url,'coupon', {
 				bottom: '0px',
-				top: '44px'
+				top: '0px'
 			})
 			newWv.show();
 		})
