@@ -15,7 +15,7 @@ mui.plusReady(function() {
 			id: 'packet'
 		},
 		{
-			url: 'https://m.chuchutong.com/js/order/vueorder/html/orderindex.html',
+			url: './personal.html',
 			id: 'personal'
 		}
 	];
@@ -41,6 +41,10 @@ mui.plusReady(function() {
 		else {
 			plus.webview.getWebviewById(showWv).hide();
 			plus.webview.getWebviewById(willShowWv).show();
+			if(willShowWv == 'personal') plus.webview.getWebviewById('order').show();
+			else {
+				plus.webview.getWebviewById('order').hide();
+			}
 			showWv = willShowWv;
 		}
 	})

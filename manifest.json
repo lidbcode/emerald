@@ -357,7 +357,8 @@
 					"common/fonts/mui.ttf",
 					"common/css/mui.min.css",
 					"common/js/mui.min.js",
-					"common/js/vue.min.js"
+					"common/js/vue.min.js",
+					"module/index.html"
 				],
 				"refer": [],
 				"priority": 0
