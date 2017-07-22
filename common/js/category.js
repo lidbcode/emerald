@@ -44,7 +44,7 @@ function getCategorInfo() {
 function getCategoryItems() {
 	setTimeout(function() {
 		var _this = this
-		mui('#category').pullRefresh().endPullup((_this.category.page > 10));
+		mui('#category').pullRefresh().endPullup((_this.category.page > 100));
 		mui.ajax(apiUrl + 'get_category_items/-0/' + _this.category.page, {
 			dataType: 'json',
 			type: 'get',
@@ -54,7 +54,8 @@ function getCategoryItems() {
 			},
 			success: function(data) {
 				_this.category.items = this.category.items.concat(data);
-				_this.category.page = data?this.category.page + 1:100	
+				if(data.length < 10 ) _this.category.page = 1000 
+				else _this.category.page = this.category.page + 1
 			}
 		})
 	}, 1500);
@@ -83,24 +84,28 @@ mui('.category-box').on('tap', '#category-info', function(e) {
 
 mui('.active-input').on('tap','#img-btn',function(e){
 	var keyword = document.querySelector('input[name="keyword"]').value;
-	var newWv = plus.webview.create('search.html','serach',{
-		bottom:'0px',
-		top:'0px'
-	},{
-		keyword:keyword
-	})
-	newWv.show();
+	if(keyword != "") {
+		var newWv = plus.webview.create('search.html','serach',{
+			bottom:'0px',
+			top:'0px'
+		},{
+			keyword:keyword
+		})
+		newWv.show();
+	}	
 });
 
 function enterSearch(e) {
 	if(e.keyCode == 13) {
 		var keyword = document.querySelector('input[name="keyword"]').value;
-		var newWv = plus.webview.create('search.html', 'serach', {
-			bottom: '0px',
-			top: '0px'
-		}, {
-			keyword: keyword
-		})
-		newWv.show();
+		if(keyword != "") {
+			var newWv = plus.webview.create('search.html','serach',{
+				bottom:'0px',
+				top:'0px'
+			},{
+				keyword:keyword
+			})
+			newWv.show();
+		}
 	}
 }

@@ -13,8 +13,11 @@
 
 	<body>
 		<div id="packet">
-			<div style="height:24rem; margin-bottom: 0.2rem;">
-				<img src="../common/image/red.png" style="height:100%;width: 100%;">
+			<div class="red-box" style="height:20rem; margin-bottom: 0.2rem;">
+				<div v-if='red_packet_info.is_get' style="height:100%;text-align:center;background-color: #FF0000;">
+					今天已经领取了{{red_packet_info.value/100}}元红包, 可去公众号领取哦
+				</div>	
+				<img v-else id="red-img" src= "../common/image/red_click.png" style="height:100%;width:100%;">
 			</div>
 			<div class="item-list">
 				<template id="items" v-for="item in items">

@@ -7,6 +7,7 @@ var vm = new Vue({
 		start_banner_url:"",
 		end_banner_url:"",
 		brands: [],
+		init_items:[],
 		items: [],
 		page: 1,
 	}
@@ -16,7 +17,7 @@ mui.init({
 	pullRefresh: {
 		container: '#index',
 		up: {
-			auto: false,
+			auto: true,
 			contentrefresh: '正在加载...',
 			callback: getBrandItems
 		}
@@ -38,9 +39,6 @@ mui.plusReady(function(){
 	});
 	getBannerInfo();
 	getBrandInfo();
-	getBrandItems();
-	getBrandItems();
-	getBrandItems();
 })
 
 function getBannerInfo() {
@@ -83,7 +81,7 @@ function getBrandInfo() {
 function getBrandItems() {
 	setTimeout(function() {
 		var _this = this
-		if(_this.vm.page > 3) mui('#index').pullRefresh().endPullup((_this.vm.page > 20)); 
+		mui('#index').pullRefresh().endPullup((_this.vm.page > 100)); 
 		mui.ajax(apiUrl + 'get_brand_items/0/' + _this.vm.page, {
 			dataType: 'json',
 			type: 'get',
@@ -92,8 +90,10 @@ function getBrandItems() {
 				'Content-Type': 'application/json'
 			},
 			success: function(data) {
-				_this.vm.items = this.vm.items.concat(data)
-				_this.vm.page = this.vm.page + 1
+				if(_this.vm.page <= 2 ) _this.vm.init_items = this.vm.init_items.concat(data) 
+				else _this.vm.items = this.vm.items.concat(data)
+				if(data.length < 10 ) _this.vm.page = 1000 
+				else _this.vm.page = this.vm.page + 1
 			}
 		})
 	}, 1500);
@@ -144,24 +144,28 @@ mui('.item-list').on('tap', '#category-items', function(e) {
 
 mui('.active-input').on('tap','#img-btn',function(e){
 	var keyword = document.querySelector('input[name="keyword"]').value;
-	var newWv = plus.webview.create('search.html','serach',{
-		bottom:'0px',
-		top:'0px'
-	},{
-		keyword:keyword
-	})
-	newWv.show();
+	if(keyword != "") {
+		var newWv = plus.webview.create('search.html','serach',{
+			bottom:'0px',
+			top:'0px'
+		},{
+			keyword:keyword
+		})
+		newWv.show();
+	}	
 });
 
 function enterSearch(e) {
 	if(e.keyCode == 13) {
 		var keyword = document.querySelector('input[name="keyword"]').value;
-		var newWv = plus.webview.create('search.html', 'serach', {
-			bottom: '0px',
-			top: '0px'
-		}, {
-			keyword: keyword
-		})
-		newWv.show();
+		if(keyword != "") {
+			var newWv = plus.webview.create('search.html','serach',{
+				bottom:'0px',
+				top:'0px'
+			},{
+				keyword:keyword
+			})
+			newWv.show();
+		}
 	}
 }
