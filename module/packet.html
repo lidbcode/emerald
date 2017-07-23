@@ -9,15 +9,30 @@
 		<script src="../common/js/vue.min.js"></script>
 		<link href="../common/css/mui.min.css" rel="stylesheet" />
 		<link href="../common/css/category.css" rel="stylesheet" />
+		<link href="../common/css/packet.css" rel="stylesheet" />
 	</head>
 
 	<body>
 		<div id="packet">
-			<div class="red-box" style="height:20rem; margin-bottom: 0.2rem;">
-				<div v-if='red_packet_info.is_get' style="height:100%;text-align:center;background-color: #FF0000;">
-					今天已经领取了{{red_packet_info.value/100}}元红包, 可去公众号领取哦
-				</div>	
-				<img v-else id="red-img" src= "../common/image/red_click.png" style="height:100%;width:100%;">
+			<div class="red-box">
+				<div v-if="red_packet_info.is_get" class = "red-click">
+					<!--今天已经领取了{{red_packet_info.value/100}}元红包, 可去公众号领取哦-->
+					<div class="red-click-text">
+						<span>买的越多，领的越大</span>
+					</div>	
+					<img  id="red-click-img" src="../common/image/red_click.png" style="width: 100%; height: 24rem;">
+				</div>
+				<div v-else class = "red-open">
+					<div class="red-open-text">
+						<div class="red-open-value" style="margin-bottom: 7rem;">
+							<span>今天已经领取了{{red_packet_info.value/100}}元红包</span>
+							<br>
+							<span>明天可能更大，记得来试试</span>
+						</div>
+						<span>可在公众号"券开心"提现</span>
+					</div>
+					<img  id="red-open-img" src="../common/image/open.png" style="width:100%;height: 24rem;">
+				</div>
 			</div>
 			<div class="item-list">
 				<template id="items" v-for="item in items">

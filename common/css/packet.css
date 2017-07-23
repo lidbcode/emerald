@@ -1,0 +1,38 @@
+.red-box {
+	position:relative;
+	height:24rem;
+	background-color: #FFFFFF;
+}
+.red-click-text {
+	position: absolute;
+	height: 30% ;
+	width: 100%;
+	text-align: center;
+	padding-top: 4.0rem;
+}
+
+.red-click-text span {
+	font-size: 3.2rem;
+	font-family:cursive;
+	color: red;
+}
+
+.red-open-text {
+	position: absolute;
+	height: 100% ;
+	width: 100%;
+	text-align: center;
+	padding-top: 2.0rem;
+	border: 2px solid blue;
+}
+
+.red-open-text span {
+	font-size: 2rem;
+	font-family:cursive;
+	color: #FFFFFF;
+}
+
+.red-open-text img {
+	width: 40%;
+	margin-top: 3.0rem;
+}
