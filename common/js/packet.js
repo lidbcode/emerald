@@ -23,7 +23,6 @@ mui.init({
 mui.plusReady(function() {
 	plus.webview.currentWebview().setStyle({scrollIndicator:'none'});
 	getRedPacket("init")
-	mui.previewImage();
 });
 
 function getRedPacket(action) {
@@ -70,6 +69,6 @@ mui('.item-list').on('tap', '#category-items', function(e) {
 	newWv.show()
 })
 
-mui('.red-box').on('tap','#red-click-img',function(){
+mui('.red-click').on('tap','#red-click-img',function(){
 	getRedPacket("click")
 })

@@ -15,8 +15,7 @@
 	<body>
 		<div id="packet">
 			<div class="red-box">
-				<div v-if="red_packet_info.is_get" class = "red-click">
-					<!--今天已经领取了{{red_packet_info.value/100}}元红包, 可去公众号领取哦-->
+				<div v-if="!red_packet_info.is_get" class = "red-click">
 					<div class="red-click-text">
 						<span>买的越多，领的越大</span>
 					</div>	

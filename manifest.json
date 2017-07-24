@@ -260,7 +260,9 @@
 					"common/fonts/mui.ttf",
 					"common/css/category.css",
 					"common/image/c-1.png",
-					"common/image/red_click.png"
+					"common/image/red_click.png",
+					"common/image/open.png",
+					"common/css/packet.css"
 				],
 				"refer": [
 					"module/detail.html"
