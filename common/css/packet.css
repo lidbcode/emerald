@@ -1,6 +1,5 @@
 .red-box {
 	position:relative;
-	height:24rem;
 	background-color: #FFFFFF;
 }
 .red-click-text {
@@ -28,7 +27,7 @@
 .red-open-text span {
 	font-size: 2rem;
 	font-family:cursive;
-	color: #FFFFFF;
+	color: blue;
 }
 
 .red-open-text img {

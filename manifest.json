@@ -262,7 +262,11 @@
 					"common/image/c-1.png",
 					"common/image/red_click.png",
 					"common/image/open.png",
-					"common/css/packet.css"
+					"common/css/packet.css",
+					"common/image/get.png",
+					"common/image/buy.png",
+					"common/image/get_1.png",
+					"common/image/red_open.png"
 				],
 				"refer": [
 					"module/detail.html"
