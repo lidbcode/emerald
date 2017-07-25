@@ -16,14 +16,18 @@
 		<div id="packet">
 			<div class="red-box">
 				<div v-if="!red_packet_info.is_get" class = "red-click">	
-					<img  id="red-click-img" src="../common/image/red_click.png" style="width: 100%;">
+					<img id="red-click-img" src="../common/image/red_click.png" style="width: 100%;">
 				</div>
 				<div v-else class = "red-open">
 					<div class="red-open-text">
-						<div class="red-open-value" style="margin-bottom: 7rem;">
-							<span>今天您已经领取了{{red_packet_info.value/100}}元</span>
+						<div class="red-open-value">
+							{{red_packet_info.value/100}}元
 						</div>
-						<span>可在公众号"券开心"提现</span>
+						<div class="red-open-get">
+							您有未提现的金额{{red_packet_info.total/100}}元
+							<br>
+							满{{red_packet_info.max_value/100}}元即可在{{red_packet_info.wx_name}}提现
+						</div>	
 					</div>
 					<img  id="red-open-img" src="../common/image/red_open.png" style="width:100%;">
 				</div>

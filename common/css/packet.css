@@ -2,35 +2,28 @@
 	position:relative;
 	background-color: #FFFFFF;
 }
-.red-click-text {
-	position: absolute;
-	height: 30% ;
-	width: 100%;
-	text-align: center;
-	padding-top: 4.0rem;
-}
-
-.red-click-text span {
-	font-size: 3.2rem;
-	font-family:cursive;
-	color: red;
-}
 
 .red-open-text {
 	position: absolute;
-	height: 100% ;
-	width: 100%;
+	height: 50% ;
+	width: 60%;
+	margin-left: 20%;
+	margin-top: 13%;
+	/*border: 2px solid red;*/
+}
+
+.red-open-value {
+	text-align: right;
+	color: red;
+  	font-size:2.4rem;
+  	font-family:cursive;
+}
+
+.red-open-get {
+	margin-top: 1.5rem;
 	text-align: center;
-	padding-top: 2.0rem;
-}
-
-.red-open-text span {
-	font-size: 2rem;
-	font-family:cursive;
-	color: blue;
-}
-
-.red-open-text img {
-	width: 40%;
-	margin-top: 3.0rem;
+	overflow: hidden;
+    color: #333;
+    font-size: 1.4rem;
+	/*border: 2px solid blue;*/
 }
