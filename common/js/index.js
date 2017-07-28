@@ -67,17 +67,19 @@ function download() {
 		if(e.index == 0) {
 			plus.nativeUI.showWaiting("正在下载最新版本的安装包...")
 			var url = "http://47.94.159.88:26666/static/quankaixin.apk"
-			plus.downloader.createDownload(url, {filename:"quankaixin/version/"}, function(d, status) {
+			plus.downloader.createDownload(url, {
+				filename: "quankaixin/version/"
+			}, function(d, status) {
 				if(status == 200) {
 					plus.nativeUI.confirm("最新版本的安装包已经下载完成，是否立即安装", function(e) {
-						if(e.index == 0) { 
+						if(e.index == 0) {
 							install(d.filename)
 						} else {
-							plus.nativeUI.alert("下载失败！"); 
+							plus.nativeUI.alert("下载失败！");
 						}
 					})
 				}
-			plus.nativeUI.closeWaiting()	
+				plus.nativeUI.closeWaiting()
 			}).start()
 		}
 	})
@@ -85,15 +87,15 @@ function download() {
 
 function install(path) {
 	plus.nativeUI.showWaiting("正在安装最新版本...")
-	plus.runtime.install(path,{},function(){ 
-        plus.nativeUI.closeWaiting()
-        plus.nativeUI.alert("应用资源更新完成!\n点击确定按钮重启完成升级",function(){ 
-            plus.runtime.restart(); 
-        }); 
-    },function(e){ 
-        plus.nativeUI.closeWaiting() 
-        plus.nativeUI.alert("安装文件失败["+e.code+"]："+e.message); 
-    })
+	plus.runtime.install(path, {}, function() {
+		plus.nativeUI.closeWaiting()
+		plus.nativeUI.alert("应用资源更新完成!\n点击确定按钮重启完成升级", function() {
+			plus.runtime.restart();
+		});
+	}, function(e) {
+		plus.nativeUI.closeWaiting()
+		plus.nativeUI.alert("安装文件失败[" + e.code + "]：" + e.message);
+	})
 }
 
 function getBannerInfo() {

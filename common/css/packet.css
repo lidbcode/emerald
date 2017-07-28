@@ -1,11 +1,11 @@
 .red-box {
-	position:relative;
+	position: relative;
 	background-color: #FFFFFF;
 }
 
 .red-open-text {
 	position: absolute;
-	height: 50% ;
+	height: 50%;
 	width: 60%;
 	margin-left: 20%;
 	margin-top: 13%;
@@ -14,19 +14,18 @@
 .red-open-value {
 	text-align: right;
 	color: red;
-  	font-size:2.4rem;
-  	font-family:cursive;
+	font-size: 2.4rem;
+	font-family: cursive;
 }
 
 .red-open-get {
-	margin-top: 1.5rem;
+	margin-top: 1.0rem;
 	overflow: hidden;
-    color: #333;
-    font-size: 1.4rem;
+	color: #333;
+	font-size: 1.4rem;
 	margin-left: 2rem;
 }
 
 .red-open-get span {
-	color:#FE634D;
-	font-size: 1.6rem;
+	color: #FE634D;
 }

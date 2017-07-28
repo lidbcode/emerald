@@ -22,7 +22,9 @@ mui.init({
 });
 
 mui.plusReady(function() {
-	plus.webview.currentWebview().setStyle({scrollIndicator:'none'});
+	plus.webview.currentWebview().setStyle({
+		scrollIndicator: 'none'
+	});
 	var self = plus.webview.currentWebview();
 	this.vm.keyword = self.keyword;
 	this.vm.img_url = self.img_url;
@@ -42,7 +44,7 @@ function getBannerSingle() {
 			},
 			success: function(data) {
 				_this.vm.items = this.vm.items.concat(data);
-				if(data.length < 10 ) _this.vm.page = 1000 
+				if(data.length < 10) _this.vm.page = 1000
 				else _this.vm.page = this.vm.page + 1
 			}
 		})
@@ -59,28 +61,28 @@ mui('.item-list').on('tap', '#category-items', function(e) {
 	newWv.show()
 })
 
-mui('.active-input').on('tap','#img-btn',function(e){
+mui('.active-input').on('tap', '#img-btn', function(e) {
 	var keyword = document.querySelector('input[name="keyword"]').value;
 	if(keyword != "") {
-		var newWv = plus.webview.create('search.html','serach',{
-			bottom:'0px',
-			top:'0px'
-		},{
-			keyword:keyword
+		var newWv = plus.webview.create('search.html', 'serach', {
+			bottom: '0px',
+			top: '0px'
+		}, {
+			keyword: keyword
 		})
 		newWv.show();
-	}	
+	}
 });
 
 function enterSearch(e) {
 	if(e.keyCode == 13) {
 		var keyword = document.querySelector('input[name="keyword"]').value;
 		if(keyword != "") {
-			var newWv = plus.webview.create('search.html','serach',{
-				bottom:'0px',
-				top:'0px'
-			},{
-				keyword:keyword
+			var newWv = plus.webview.create('search.html', 'serach', {
+				bottom: '0px',
+				top: '0px'
+			}, {
+				keyword: keyword
 			})
 			newWv.show();
 		}

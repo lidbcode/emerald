@@ -5,7 +5,7 @@ var vm = new Vue({
 	data: {
 		items: [],
 		page: 1,
-		red_packet_info:{},
+		red_packet_info: {},
 	}
 });
 
@@ -21,7 +21,9 @@ mui.init({
 });
 
 mui.plusReady(function() {
-	plus.webview.currentWebview().setStyle({scrollIndicator:'none'});
+	plus.webview.currentWebview().setStyle({
+		scrollIndicator: 'none'
+	});
 	getRedPacket("init")
 });
 
@@ -39,6 +41,7 @@ function getRedPacket(action) {
 		}
 	})
 }
+
 function getPacketSingle() {
 	setTimeout(function() {
 		var _this = this
@@ -52,7 +55,7 @@ function getPacketSingle() {
 			},
 			success: function(data) {
 				_this.vm.items = this.vm.items.concat(data);
-				if(data.length < 10 ) _this.vm.page = 1000 
+				if(data.length < 10) _this.vm.page = 1000
 				else _this.vm.page = this.vm.page + 1
 			}
 		})
@@ -69,6 +72,6 @@ mui('.item-list').on('tap', '#category-items', function(e) {
 	newWv.show()
 })
 
-mui('.red-click').on('tap','#red-click-img',function(){
+mui('.red-click').on('tap', '#red-click-img', function() {
 	getRedPacket("click")
 })

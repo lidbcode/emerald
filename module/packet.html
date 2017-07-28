@@ -15,19 +15,20 @@
 	<body>
 		<div id="packet">
 			<div class="red-box">
-				<div v-if="!red_packet_info.is_get" class = "red-click">	
+				<div v-if="!red_packet_info.is_get" class="red-click">
 					<img id="red-click-img" src="../common/image/red_click.png" style="width: 100%;">
 				</div>
-				<div v-else class = "red-open">
+				<div v-else class="red-open">
 					<div class="red-open-text">
 						<div class="red-open-value">
 							{{red_packet_info.value/100}}元
 						</div>
 						<div class="red-open-get">
-							您有未提现的金额{{red_packet_info.total/100}}元,满{{red_packet_info.max_value/100}}元即可在<span>{{red_packet_info.wx_name}}</span>提现
-						</div>	
+							您有未提现的现金{{red_packet_info.total/100}}元, 满{{red_packet_info.max_value/100}}元即可在
+							<span>{{red_packet_info.wx_name}}</span>提现
+						</div>
 					</div>
-					<img  id="red-open-img" src="../common/image/red_open.png" style="width:100%;">
+					<img id="red-open-img" src="../common/image/red_open.png" style="width:100%;">
 				</div>
 			</div>
 			<div class="item-list">
