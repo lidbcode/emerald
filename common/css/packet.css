@@ -9,7 +9,6 @@
 	width: 60%;
 	margin-left: 20%;
 	margin-top: 13%;
-	/*border: 2px solid red;*/
 }
 
 .red-open-value {
@@ -21,9 +20,13 @@
 
 .red-open-get {
 	margin-top: 1.5rem;
-	text-align: center;
 	overflow: hidden;
     color: #333;
     font-size: 1.4rem;
-	/*border: 2px solid blue;*/
+	margin-left: 2rem;
+}
+
+.red-open-get span {
+	color:#FE634D;
+	font-size: 1.6rem;
 }
